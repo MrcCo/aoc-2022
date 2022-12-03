@@ -16,3 +16,8 @@ val readForDayTwo: (String) -> (List<Pair<Char, Char>>) = { filename ->
         .readLines()
         .map { Pair(it[0], it[2]) }
 }
+
+val readForDayThree: (String) -> (List<String>) = { filename ->
+    File("$resourceFolderPath/$filename")
+        .readLines()
+}

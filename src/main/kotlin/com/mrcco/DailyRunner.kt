@@ -1,6 +1,7 @@
 package com.mrcco
 
 import com.mrcco.solution.DayOneSolution
+import com.mrcco.solution.DayThreeSolution
 import com.mrcco.solution.DayTwoSolution
 import java.lang.System.currentTimeMillis
 import java.time.LocalDate
@@ -9,6 +10,7 @@ import java.time.LocalDate
 val dailySolution = mapOf(
     Pair(1, DayOneSolution()),
     Pair(2, DayTwoSolution()),
+    Pair(3, DayThreeSolution()),
 )
 
 
