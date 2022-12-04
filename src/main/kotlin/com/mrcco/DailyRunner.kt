@@ -1,5 +1,6 @@
 package com.mrcco
 
+import com.mrcco.solution.DayFourSolution
 import com.mrcco.solution.DayOneSolution
 import com.mrcco.solution.DayThreeSolution
 import com.mrcco.solution.DayTwoSolution
@@ -11,6 +12,7 @@ val dailySolution = mapOf(
     Pair(1, DayOneSolution()),
     Pair(2, DayTwoSolution()),
     Pair(3, DayThreeSolution()),
+    Pair(4, DayFourSolution()),
 )
 
 
