@@ -22,11 +22,11 @@ val readForDayThree: (String) -> (List<String>) = { filename ->
         .readLines()
 }
 
-val readForDayFour: (String) -> (List<Pair<IntRange, IntRange>>) = { filename ->
+val readForDayFour: (String) -> (Set<Pair<IntRange, IntRange>>) = { filename ->
     File("$resourceFolderPath/$filename")
         .readLines()
         .map {
             val (first, second, third, fourth) = it.split(",", "-")
             Pair(first.toInt()..second.toInt(), third.toInt()..fourth.toInt())
-        }
+        }.toSet()
 }
