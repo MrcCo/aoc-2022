@@ -6,7 +6,7 @@ abstract class Solution<INPUT, OUTPUT> {
 
     abstract val read: (FileName) -> INPUT
 
-    fun solve(filename: String) {
+    open fun solve(filename: String) {
 
         val input = read(filename)
 
