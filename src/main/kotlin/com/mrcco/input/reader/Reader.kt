@@ -2,7 +2,9 @@ package com.mrcco.input.reader
 
 import com.mrcco.solution.Cargo
 import com.mrcco.solution.Instruction
+import com.mrcco.solution.SmartElfFileSystem
 import java.io.File
+import java.util.Arrays
 
 private const val resourceFolderPath = "src/main/resources"
 
@@ -63,3 +65,23 @@ val readForDayFive: (String) -> (Pair<Cargo, Sequence<Instruction>>) = { filenam
 
     Pair(cargo, instructions)
 }
+
+val readForDaySix: (String) -> (String) = { filename ->
+    File("$resourceFolderPath/$filename")
+        .readText()
+}
+
+val readForDaySeven: (String) -> (SmartElfFileSystem) = { filename ->
+    SmartElfFileSystem(
+        File("$resourceFolderPath/$filename")
+            .readLines()
+    )
+}
+
+val readForDayEight: (String) -> (List<List<Int>>) = { filename ->
+    File("$resourceFolderPath/$filename")
+        .readLines()
+        .map { it.toCharArray() }
+        .map { it.map { c -> c.digitToInt() } }
+}
+

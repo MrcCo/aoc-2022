@@ -11,6 +11,9 @@ val dailySolution = mapOf(
     Pair(3, DayThreeSolution()),
     Pair(4, DayFourSolution()),
     Pair(5, DayFiveSolution()),
+    Pair(6, DaySixSolution()),
+    Pair(7, DaySevenSolution()),
+    Pair(8, DayEightSolution()),
 )
 
 
