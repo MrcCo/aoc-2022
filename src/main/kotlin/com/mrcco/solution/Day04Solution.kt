@@ -3,7 +3,7 @@ package com.mrcco.solution
 import com.mrcco.input.reader.readForDayFour
 import java.lang.Integer.min
 
-class DayFourSolution : Solution<Set<Pair<IntRange, IntRange>>, Int>() {
+class Day04Solution : Solution<Set<Pair<IntRange, IntRange>>, Int>() {
 
     override val read = readForDayFour
 

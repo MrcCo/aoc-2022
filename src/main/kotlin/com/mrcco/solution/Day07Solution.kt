@@ -32,6 +32,7 @@ interface FileSystem {
     fun handleSingleInput(input: String)
 }
 
+
 class ElfFileSystem(inputs: List<String>): FileSystem {
 
     val directorySizes = mutableMapOf<String, Long>()

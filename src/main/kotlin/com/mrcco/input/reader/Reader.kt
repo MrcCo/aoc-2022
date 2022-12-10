@@ -1,33 +1,30 @@
 package com.mrcco.input.reader
 
-import com.mrcco.solution.Cargo
-import com.mrcco.solution.Instruction
-import com.mrcco.solution.SmartElfFileSystem
+import com.mrcco.solution.*
 import java.io.File
-import java.util.Arrays
 
-private const val resourceFolderPath = "src/main/resources"
+private const val RESOURCE_FOLDER_PATH = "src/main/resources"
 
 val readForDayOne: (String) -> (List<Int>) = { filename ->
-    File("$resourceFolderPath/$filename")
+    File("$RESOURCE_FOLDER_PATH/$filename")
         .readText()
         .split("\n\n")
         .map { it.split("\n").sumOf { s -> s.toInt() } }
 }
 
 val readForDayTwo: (String) -> (List<Pair<Char, Char>>) = { filename ->
-    File("$resourceFolderPath/$filename")
+    File("$RESOURCE_FOLDER_PATH/$filename")
         .readLines()
         .map { Pair(it[0], it[2]) }
 }
 
 val readForDayThree: (String) -> (List<String>) = { filename ->
-    File("$resourceFolderPath/$filename")
+    File("$RESOURCE_FOLDER_PATH/$filename")
         .readLines()
 }
 
 val readForDayFour: (String) -> (Set<Pair<IntRange, IntRange>>) = { filename ->
-    File("$resourceFolderPath/$filename")
+    File("$RESOURCE_FOLDER_PATH/$filename")
         .readLines()
         .map {
             val (first, second, third, fourth) = it.split(",", "-")
@@ -37,7 +34,7 @@ val readForDayFour: (String) -> (Set<Pair<IntRange, IntRange>>) = { filename ->
 
 val readForDayFive: (String) -> (Pair<Cargo, Sequence<Instruction>>) = { filename ->
 
-    val text = File("$resourceFolderPath/$filename")
+    val text = File("$RESOURCE_FOLDER_PATH/$filename")
         .readText()
 
     val cargo = Cargo(9)
@@ -67,21 +64,42 @@ val readForDayFive: (String) -> (Pair<Cargo, Sequence<Instruction>>) = { filenam
 }
 
 val readForDaySix: (String) -> (String) = { filename ->
-    File("$resourceFolderPath/$filename")
+    File("$RESOURCE_FOLDER_PATH/$filename")
         .readText()
 }
 
 val readForDaySeven: (String) -> (SmartElfFileSystem) = { filename ->
     SmartElfFileSystem(
-        File("$resourceFolderPath/$filename")
+        File("$RESOURCE_FOLDER_PATH/$filename")
             .readLines()
     )
 }
 
 val readForDayEight: (String) -> (List<List<Int>>) = { filename ->
-    File("$resourceFolderPath/$filename")
+    File("$RESOURCE_FOLDER_PATH/$filename")
         .readLines()
         .map { it.toCharArray() }
         .map { it.map { c -> c.digitToInt() } }
 }
+
+val readForDayNine: (String) -> (List<Pair<String, Int>>) = { filename ->
+    File("$RESOURCE_FOLDER_PATH/$filename")
+        .readLines()
+        .map {
+            val (direction, distance) = it.split(" ")
+            Pair(direction, distance.toInt())
+        }
+}
+
+
+val readForDayTen: (String) -> (List<DeviceInstruction>) = { filename ->
+
+    File("$RESOURCE_FOLDER_PATH/$filename")
+        .readLines()
+        .map {
+            val parts = it.split(" ")
+            if(parts.size == 2) AddXOp(parts[1].toLong()) else NoOp()
+        }
+}
+
 

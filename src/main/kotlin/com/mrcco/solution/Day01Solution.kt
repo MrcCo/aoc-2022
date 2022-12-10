@@ -2,7 +2,7 @@ package com.mrcco.solution
 
 import com.mrcco.input.reader.readForDayOne
 
-class DayOneSolution: Solution<List<Int>, Int>() {
+class Day01Solution: Solution<List<Int>, Int>() {
 
     override val read = readForDayOne
 

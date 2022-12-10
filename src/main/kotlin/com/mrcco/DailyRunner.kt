@@ -6,14 +6,16 @@ import java.time.LocalDate
 
 
 val dailySolution = mapOf(
-    Pair(1, DayOneSolution()),
-    Pair(2, DayTwoSolution()),
+    Pair(1, Day01Solution()),
+    Pair(2, Day02Solution()),
     Pair(3, DayThreeSolution()),
-    Pair(4, DayFourSolution()),
+    Pair(4, Day04Solution()),
     Pair(5, DayFiveSolution()),
     Pair(6, DaySixSolution()),
     Pair(7, DaySevenSolution()),
-    Pair(8, DayEightSolution()),
+    Pair(8, Day08Solution()),
+    Pair(9, Day09Solution()),
+    Pair(10, Day10Solution()),
 )
 
 
